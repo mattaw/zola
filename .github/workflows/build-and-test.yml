@@ -44,11 +44,6 @@ jobs:
           toolchain: ${{ matrix.rustup_toolchain }}
           targets: ${{ matrix.target }}
 
-      - name: Cargo build (Native TLS)
-        run: |
-          cargo build --all --no-default-features --features native-tls --target ${{ matrix.target }}
-          cargo clean
-
       - name: Cargo build (Rust TLS)
         run: cargo build --all --target ${{ matrix.target }}
 
